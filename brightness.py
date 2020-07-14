@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 def get_brightness():
-    r = subprocess.run(["brightness", "-l"], capture_output=True)
+    r = subprocess.run(["/usr/local/bin/brightness", "-l"], capture_output=True)
     for part in [t.strip() for t in r.stdout.decode('utf-8').split('\n')]:
         if not part.startswith("display 0:"):
             continue
@@ -27,7 +27,7 @@ def change_brightness(change):
         current_bri = 0
     elif current_bri > 1:
         current_bri = 1
-    subprocess.run(["brightness", str(current_bri)])
+    subprocess.run(["/usr/local/bin/brightness", str(current_bri)])
     print("brightness is now at {}".format(current_bri))
 
 
