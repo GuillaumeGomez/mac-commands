@@ -47,9 +47,9 @@ if __name__ == "__main__":
     argv = sys.argv[1:]
     if len(argv) > 0:
         if argv[0] == "up":
-            change_volume(5)
+            change_volume(10)
         elif argv[0] == "down":
-            change_volume(-5)
+            change_volume(-10)
         elif argv[0] == "mute":
             set_muted()
         else:
